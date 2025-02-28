@@ -8,26 +8,16 @@ function App() {
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1 className='bg-red-400'>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+       
+     <div className='text-green bg-orange-600 w-full h-full flex 
+     justify-center font-6xl p-24 rounded-full  text-8xl '>welcome to react vite and tailwind</div>
+     <p className='m-8 p-8 text-white bg-orange-400 rounded-xl'> my new text</p>
+     <button className='p-20 rounded-sm bg-blue-200 p-6 text-green'> submitted</button>
+     <p className='bg-orange-800'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta, sequi.</p>
+     <div className='text-red p-20 rounded-full bg-red-800'>fd</div>
+     <div className='text-red p-20 rounded'>fd</div>
+     <div className='text-red p-20 rounded'>fd</div>
+     <span className='bg '>fsdfkj</span>
     </>
   )
 }
