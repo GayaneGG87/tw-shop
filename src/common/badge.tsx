@@ -6,7 +6,6 @@ export interface SkillProps   {
 }
 
 export const Badge: FC<SkillProps> = ({skill})=> {
-    console.log('skill', skill)
   return (
      <div className='px-4 py-4 bg-yellow-500 text-white flex rounded-sm font-medium'>
                 {skill} 

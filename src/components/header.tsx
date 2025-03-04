@@ -1,8 +1,7 @@
-import { React, useState } from 'react';
-import Dark from "./../assets/icons/dark";
-import  Light  from "./../assets/icons/light";
+import React, {FC, useState } from 'react';
+import SunMoonTheme from '../common/sunMoonTheme'
 
-export const Header : FC<PersonProps> = () => {
+export const Header : React.FC = () => {
     const [darkMode, setDarkMode] = useState<boolean>(false) 
   
    return(
@@ -15,11 +14,7 @@ export const Header : FC<PersonProps> = () => {
                     <li>About</li>
                     <li>Skills</li>
                     <li>
-                        <div className='w-[30px] h-[30px] flex self-center items-center justify-center cursor-pointer bg-slate-100 rounded-sm border-slate-200'>
-                            { darkMode ? 
-                            <Dark onClick={()=>setDarkMode(!darkMode)}/> :
-                            <Light onClick={()=>setDarkMode(!darkMode)} /> }
-                        </div>
+                        <SunMoonTheme />
                     </li>
                 </ul>
                 <div className='flex md:hidden text-4xl text-black h-[44px] cursor-pointer'>&#9776;</div>

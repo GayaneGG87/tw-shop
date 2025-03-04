@@ -25,6 +25,7 @@
     "@tailwindcss/vite": "^4.0.9",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.13.5",
+    "lucide-react": "^0.477.0",
     "prettier-eslint": "^16.3.0",
     "react": "^19.0.0",
     "react-autocomplete": "^1.8.1",

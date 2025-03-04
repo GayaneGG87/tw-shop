@@ -173,12 +173,12 @@ console.log('test for rendering')
   return (
     <>
        <Header />
-       <Home  person={person}/>
-       <div className='font-bold text-center mx-auto my-6  dark:text-white'>🡫</div>
-       <About about={about} />
-       <div className='font-bold text-center mb-6 mt-24 dark:text-white'>🡫</div>
-       <Skills skill={about.skill} />
-       <Footer />
+       {/* <Home  person={person}/> */}
+       {/* <div className='font-bold text-center mx-auto my-6  dark:text-white'>🡫</div> */}
+       {/* <About about={about} /> */}
+       {/* <div className='font-bold text-center mb-6 mt-24 dark:text-white'>🡫</div> */}
+       {/* <Skills skill={about.skill} /> */}
+       {/* <Footer /> */}
     </>
   )
 }
