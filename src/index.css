@@ -1,6 +1,28 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 #root{
   margin: 0;
   padding: 0;
 }
+
+@layer base {
+  :root{
+    --color-BgColor: 192, 235, 52;
+  }
+  :root[class='dark']{
+    --color-BgColor: 117, 145, 25
+  }
+}
+
+@layer utilities {
+  .section-min-height {
+     min-height: calc(100vh - 68px);
+  }
+  .toggle-btn{
+    @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45
+    [&>div::after]:translate-y-0 [&>div::after]:-rotate-45
+    [&>div]:bg-transparent [&>div]:rotate-[720deg]
+  }
+ }

@@ -15,6 +15,7 @@ const SunMoonTheme: React.FC = () => {
         document.documentElement.classList.remove('dark')
       }
       localStorage.setItem('theme', theme)
+      document.getElementById('root').setAttribute('data-theme',`${theme}`)
 console.log('teme', theme)
     },[theme])
 
@@ -23,11 +24,14 @@ console.log('teme', theme)
     }
     
   return (
-    <button onClick={handleClick}
+    <div data-theme={theme}> 
+      <button onClick={handleClick}
     className=' flex self-center items-center justify-center transition-all
      bg-slate-100 rounded-sm border-slate-200' aria-label="Toggle Theme">
         { theme ==='dark' ? <Moon /> : <Sun /> }
     </button>
+    </div>
+    
   )
 }
 
