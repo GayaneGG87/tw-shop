@@ -1,29 +1,37 @@
-import React, {FC} from 'react'
-import {IAbout, ICourses, IEducation, IExperience, ILanguage} from './../types/types'
+import React, {FC, useState} from 'react'
+import {IAbout, ICourses, IEducation, IExperience, ILanguage, IList} from './../types/types'
 
-export interface IItemAbout {
-    itemAbout: IEducation |IExperience |ILanguage | ICourses
+ interface IItemAboutProps {
+    itemAbout: IList
 }
 
-export const Accordion :FC<IItemAbout>  = ({itemAbout}) => {
+export const Accordion :React.FC<IItemAboutProps>  = ({itemAbout})=> {
+    console.log('item', itemAbout)
+    const [isOpenList, setIsOpenList] = useState<boolean>(false)
 
     return (
-    <section className='w-full flex flex-col border border-amber-500 rounded-sm'>
-            <div className='w-full px-2 py-4 bg-yellow-500 text-white dark:bg-yellow-500'>{itemAbout.description}</div>
-                <ul className='border border-amber-400 p-2 flex flex-col gap-2' >
-                    {itemAbout.list.map((item, i)=>
-                         <li key={i} className="flex flex-col border border-yellow-600 m-2 p-2 rounded-sm ">
-                            {Object.entries(item).
-                            filter(([key]) => key !== "id").
-                            map(([key, value]) => (
-                                <p key={key} className=''>
-                                    <span className='capitalize px-4 font-bold'>{key} :</span>
-                                     {value}</p>
-                            ))}
-                        </li>
-                    )}
-                    
-                </ul>
+    <section className='flex flex-col bg-slate-200 mx-6 my-2 rounded-sm md:mx-24 dark:bg-slate-600'>
+        <div className='w-full px-2 py-4  flex justify-between'
+        onClick={()=>setIsOpenList(!isOpenList)}>
+            <h3 className='text-left dark:text-white'>{itemAbout.description}</h3>
+            <button className={`text-yellow-500 duration-200 dark:text-white ${isOpenList ? 'rotate-180 ':'' }` }
+            > 🡫  </button>
+        </div>
+           {isOpenList && 
+           <ul className='p-4 flex flex-col gap-4' >
+           {itemAbout.list.map((item, i)=>
+                <li key={i} className=" bg-slate-300 p-2 rounded-sm drop-shadow-md  dark:bg-slate-800 dark:text-white ">
+                   {Object.entries(item).
+                   filter(([key]) => key !== "id").
+                   map(([key, value]) => (
+                           <span className='capitalize font-medium'>{value} .</span>
+                       
+                   ))}
+               </li>
+           )}
+           
+       </ul>}
+                
     </section>
   )
 }

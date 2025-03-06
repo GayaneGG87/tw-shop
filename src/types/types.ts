@@ -42,17 +42,25 @@ export interface ICourses{
     date?: string,
 
 }
-
-export interface IAbout {
-    education: Array<IEducation>,
-    experience: Array<IExperience>,
-    skill: Array<ISkill>,
-    lang:Array<ILanguage>,
-    course: Array<ICourses>
-}
-
 export interface IList{
     description: string,
-    list: IEducation | ISkill | ICourses | ILanguage | IExperience
+    list: Array<IEducation | ISkill | ICourses | ILanguage | IExperience>
 }
+
+export interface IAbout {
+    education: IList,
+    experience:IList,
+    skill: IList,
+    lang:IList,
+    course: IList
+}
+
+export interface IProjects {
+    id: string | number,
+    title: string,
+    description : string,
+    img: string,
+    link: string
+}
+
 

@@ -1,6 +1,6 @@
 import React, {FC, useState } from 'react';
 import SunMoonTheme from '../common/sunMoonTheme'
-import MobileNav from './../common/mobileNAv';
+import MobileNav from '../common/mobileNav';
 import HamburgerMenu from './../common/hamburgerMenu';
 
 export const Header : React.FC = () => {
@@ -20,7 +20,7 @@ export const Header : React.FC = () => {
                                 md:flex md:gap-6 dark:text-slate-200'>
                                 <li>Home</li>
                                 <li>About</li>
-                                <li>Skills</li>
+                                <li>Projects</li>
                                 <li> <SunMoonTheme /> </li>
                             </ul>
                            <HamburgerMenu  handleOpenMobileNav={hundleOpenMenu}/>

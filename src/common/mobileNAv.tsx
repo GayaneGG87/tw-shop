@@ -16,7 +16,7 @@ export const MobileNav: React.FC= ()=> {
     <a
         href="#testimonial"
         className="w-full hover:opacity-90"
-        >Skills</a>
+        >Projects</a>
     <a href="#contact" className="w-full  hover:opacity-90"
         >Contact</a>
     <a href="#footer" className="w-full hover:opacity-90"
