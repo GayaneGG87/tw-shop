@@ -180,7 +180,7 @@ const projects: IProjects[] = [
   id: 2,
   title: 'Products web Page',
   description:'There are some functional sections, especialy buttons, washad been used react redux hook',
-  img:"05.png",
+  img:"work2.jpg",
   link:'#SecondLink'
 },
 {
