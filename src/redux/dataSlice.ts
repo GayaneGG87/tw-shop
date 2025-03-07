@@ -19,7 +19,7 @@ interface Item {
 interface DataState {
   person:IPerson,
   navMenu:INavMenu[],
-  about: IAbout[],
+  about: IAbout,
   projects:IProjects[],
 }
 interface LocalData extends DataState {

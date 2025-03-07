@@ -12,14 +12,17 @@ function App() {
   return (
     <>
         <Header />
-        <Home/>
-        <div className='my-arrow-up-800'>🡫</div>
-        <About />
-        <div className='my-arrow-up-950'>🡫</div>
-        <Projects />
-        <div className='my-arrow-up-800'>🡫</div>
-        <Person />
-        <div className='my-arrow-up-950'>🡫</div>
+        <div className='tallscreen:section-min-height widescreen:section-min-height'>
+          <Home/>
+          <div className='my-arrow-up-800'>🡫</div>
+          <About />
+          <div className='my-arrow-up-950'>🡫</div>
+          <Projects />
+          <div className='my-arrow-up-800'>🡫</div>
+          <Person />
+          <div className='my-arrow-up-950'>🡫</div>
+          </div>
+       
         <Footer /> 
     </>
   )

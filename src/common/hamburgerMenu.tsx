@@ -8,7 +8,7 @@ interface MobileNavProps{
 
 export const HamburgerMenu: FC<MobileNavProps> = ({handleOpenMobileNav, isOpen})=> {
     
-    const handleIsOpen = () =>{
+    const handleIsOpen = ():void =>{
         handleOpenMobileNav();
     }
   return (

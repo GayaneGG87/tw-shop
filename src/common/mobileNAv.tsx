@@ -1,17 +1,16 @@
-import React, {FC} from 'react';
+import React, {FC, MouseEventHandler} from 'react';
 import SunMoonTheme from './sunMoonTheme'
-import { INavMenu } from 'src/types/types';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from './../redux/store';
 import { setOpenNav } from './../redux/dataSlice';
 
 
-export const MobileNav: FC= ()=> {
+export const MobileNav: React.FC= ()=> {
     const isOpenMobileNav = useSelector((state: RootState)=>state.data.isOpenMobileNav)
     const navList = useSelector((state: RootState)=>state.data.navMenu)
     const dispatch = useDispatch();
     
-    const handleOpenMenu = (e): void=>{
+    const handleOpenMenu = (e :React.MouseEvent<HTMLElement>): void=>{
         e.preventDefault;
         dispatch(setOpenNav(!isOpenMobileNav))
         
