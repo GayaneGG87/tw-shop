@@ -23,7 +23,7 @@ export const Accordion :React.FC<IItemAboutProps>  = ({itemAbout})=> {
                    {Object.entries(item).
                    filter(([key]) => key !== "id").
                    map(([key, value]) => (
-                           <span className='capitalize font-medium'>{value} .</span>
+                           <span key={key} className='capitalize font-medium'>{value} .</span>
                        
                    ))}
                </li>
