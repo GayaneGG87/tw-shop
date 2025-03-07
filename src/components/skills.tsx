@@ -7,7 +7,6 @@ skill: IList
 }
 
 export const Skills : React.FC<SkillsProps> = ({skill})=> {
-  console.log('skill', skill)
   return (
     <section className='px-6 md:px-24 my-6'>
         <h3 className='text-2xl md:text-3xl text-center mt-6 mb-2'>{skill.description}</h3>

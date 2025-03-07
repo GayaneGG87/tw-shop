@@ -10,7 +10,7 @@
 
     const pdfUrl = "/Gayane_CV_25.pdf"; 
     return(
-        <main className='w-full px-6 py-12 flex justify-between flex-col gap-6 md:flex-row md:px-24 dark:bg-slate-800'>
+        <main className='w-full px-6 py-12 flex justify-between flex-col gap-6 md:flex-row md:px-24 dark:bg-slate-800' id='home'>
             <section className='w-full md:w-2/5 rounded-full flex justify-center'>
                 <img  className='size-60 rounded-full shadow-lg shadow-yellow-600 border border-amber-400 md:justify-start'
                 alt='Profile image'

@@ -6,7 +6,6 @@ import {IAbout, ICourses, IEducation, IExperience, ILanguage, IList} from './../
 }
 
 export const Accordion :React.FC<IItemAboutProps>  = ({itemAbout})=> {
-    console.log('item', itemAbout)
     const [isOpenList, setIsOpenList] = useState<boolean>(false)
 
     return (

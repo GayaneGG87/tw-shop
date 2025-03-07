@@ -1,10 +1,18 @@
-import React, {FC, useState } from 'react';
+import React, {FC, useEffect, useState } from 'react';
 import SunMoonTheme from '../common/sunMoonTheme'
 import MobileNav from '../common/mobileNav';
 import HamburgerMenu from './../common/hamburgerMenu';
+import { INavMenu } from 'src/types/types';
 
-export const Header : React.FC = () => {
+interface NavProps {
+    nav: INavMenu
+}
+
+export const Header : React.FC<NavProps> = ({nav}) => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
+    
+    useEffect(()=>{
+    },[isOpen])
 
     const hundleOpenMenu =()=> {
         setIsOpen(!isOpen)
@@ -18,15 +26,15 @@ export const Header : React.FC = () => {
                     <nav className='flex items-center max-w-3/4'>
                             <ul className='hidden w-full text-slate-600 font-medium justify-between items-center text-lg gap-2
                                 md:flex md:gap-6 dark:text-slate-200'>
-                                <li>Home</li>
-                                <li>About</li>
-                                <li>Projects</li>
+                                    {nav.map((item, i)=>
+                                        <li key={i}><a href={`#${item.link}`}>{item.name}</a></li>
+                                    )}
                                 <li> <SunMoonTheme /> </li>
                             </ul>
-                           <HamburgerMenu  handleOpenMobileNav={hundleOpenMenu}/>
+                           <HamburgerMenu  handleOpenMobileNav={hundleOpenMenu} setIsOpen={setIsOpen} isOpen={isOpen}/>
                     </nav>
             </section>  
-            {isOpen && <MobileNav />}
+            {isOpen && <MobileNav nav={nav} setIsOpen={setIsOpen}/>}
        </header>
     </section>    
    )

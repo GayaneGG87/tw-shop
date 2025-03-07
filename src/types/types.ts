@@ -62,5 +62,10 @@ export interface IProjects {
     img: string,
     link: string
 }
+export interface INavMenu {
+    id: string |number,
+    name: string,
+    link: string
+}
 
 

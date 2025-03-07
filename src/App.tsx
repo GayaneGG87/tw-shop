@@ -3,7 +3,7 @@ import { Header } from './components/header'
 import {Home} from './components//home'
 import {About} from './components/about'
 import {Footer} from './components/footer'
-import { IAbout, IPerson, IProjects } from './types/types'
+import { IAbout, INavMenu, IPerson, IProjects } from './types/types'
 import { Projects } from './components/projects'
 import  Person  from './components/person'
 
@@ -190,12 +190,31 @@ const projects: IProjects[] = [
   img:"05.png",
   link:'#SecondLink'
 }
+];
+const navMenu: INavMenu[] = [
+  {id: 1,
+  name:'Home',
+  link:'home'
+  },
+  {id: 2,
+  name:'About',
+  link:'about'
+  },
+  {id: 3,
+      name:'Projects',
+      link:'projects'
+      },
+      {id: 4,
+      name:'Contacts',
+      link:'contacts'
+      },
+  
 ]
 
 
   return (
     <>
-       <Header />
+       <Header nav={navMenu} />
        <Home  person={person}/>
        <div className='my-arrow-up-800'>🡫</div>
        <About about={about} />

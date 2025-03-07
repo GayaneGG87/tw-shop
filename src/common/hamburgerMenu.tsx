@@ -2,13 +2,13 @@ import React, {FC, useEffect, useState} from 'react'
 import {X, Menu} from 'lucide-react'
 
 interface MobileNavProps{
-    handleOpenMobileNav: ()=>void
+    handleOpenMobileNav: ()=>void,
+    setIsOpen: boolean,
+    isOpen: boolean
 }
 
-export const HamburgerMenu: FC<MobileNavProps> = ({handleOpenMobileNav})=> {
-        const [isOpen, setIsOpen] = useState<boolean>(false)
+export const HamburgerMenu: FC<MobileNavProps> = ({handleOpenMobileNav, setIsOpen, isOpen})=> {
     
-
     const handleIsOpen = () =>{
         setIsOpen(!isOpen)
         handleOpenMobileNav();
