@@ -1,5 +1,5 @@
 import React, {FC, useState} from 'react'
-import {IAbout, ICourses, IEducation, IExperience, ILanguage, IList} from './../types/types'
+import {IList} from './../types/types'
 
  interface IItemAboutProps {
     itemAbout: IList
@@ -23,7 +23,7 @@ export const Accordion :React.FC<IItemAboutProps>  = ({itemAbout})=> {
                    {Object.entries(item).
                    filter(([key]) => key !== "id").
                    map(([key, value]) => (
-                           <span key={key} className='capitalize font-medium'>{value} .</span>
+                     <span key={key} className='capitalize font-medium'>{value} .</span>
                        
                    ))}
                </li>

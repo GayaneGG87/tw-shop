@@ -1,11 +1,10 @@
 import React from 'react'
-import { IProjects } from 'src/types/types'
+import { useSelector } from 'react-redux'
+import { RootState } from 'src/redux/store'
 
-interface ProjectsProps {
-    projects: IProjects[]
-}
 
-export const Projects: React.FC<ProjectsProps> = ({projects}) => {
+export const Projects: React.FC = () => {
+    const projects = useSelector((state:RootState)=> state.data.projects)
 
     return (
     <section id='projects' className='px-6 py-4 md:px-24 dark:bg-slate-800 dark:text-white'>

@@ -1,17 +1,21 @@
-import React, {FC, useState} from 'react';
+import React, {FC} from 'react';
 import SunMoonTheme from './sunMoonTheme'
 import { INavMenu } from 'src/types/types';
+import { useSelector, useDispatch } from 'react-redux';
+import { RootState } from './../redux/store';
+import { setOpenNav } from './../redux/dataSlice';
 
-interface IsetIsOpen{
-    setIsOpen: boolean
-}
 
-interface MobileNavProps {
-    nav: INavMenu,
-    setIsOpen: IsetIsOpen
-}
-
-export const MobileNav: React.FC<MobileNavProps>= ({nav, setIsOpen})=> {
+export const MobileNav: FC= ()=> {
+    const isOpenMobileNav = useSelector((state: RootState)=>state.data.isOpenMobileNav)
+    const navList = useSelector((state: RootState)=>state.data.navMenu)
+    const dispatch = useDispatch();
+    
+    const handleOpenMenu = (e): void=>{
+        e.preventDefault;
+        dispatch(setOpenNav(!isOpenMobileNav))
+        
+    }
     
   return (
     <section
@@ -20,9 +24,9 @@ export const MobileNav: React.FC<MobileNavProps>= ({nav, setIsOpen})=> {
         className="flex flex-col gap-4 mt-12 pl-6 text-xl item-left justify-start"
             area-label="mobile">
                 {
-                    nav.map((item, i)=>
+                    navList.map((item, i)=>
                         <a  
-                        onClick={(e)=>{e.preventDefault; setIsOpen(false) }}
+                        onClick={(e)=> handleOpenMenu(e) }
                         key={i} 
                         href={`#${item.link}`} 
                         className="w-full hover:opacity-90"

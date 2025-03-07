@@ -1,12 +1,8 @@
  import React, {FC}  from 'react';
- import {IPerson } from './../types/types';
- import image2 from "./../assets/images/01.jpg"
+ import Image2 from "./../assets/images/01.jpg"
 
- export interface PersonProps {
-    person: IPerson
- }
  
- export const Home : FC<PersonProps> = ({person}) => {
+ export const Home : FC = () => {
 
     const pdfUrl = "/Gayane_CV_25.pdf"; 
     return(
@@ -14,7 +10,7 @@
             <section className='w-full md:w-2/5 rounded-full flex justify-center'>
                 <img  className='size-60 rounded-full shadow-lg shadow-yellow-600 border border-amber-400 md:justify-start'
                 alt='Profile image'
-                    src={image2} />
+                    src={Image2} />
             </section>
             <section className='flex w-full md:w-3/5 flex-col justify-center items-center md:items-start'>
                     <h2 className='text-4xl font-medium md:text-5xl dark:text-white'>Hello I'm <br /> Gayane</h2>

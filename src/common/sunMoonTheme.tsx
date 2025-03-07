@@ -1,7 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import { Sun, Moon } from 'lucide-react'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootState } from './../redux/store'
+import { setOpenNav } from './../redux/dataSlice'
 
 const SunMoonTheme: React.FC = () => {
+  const isOpenMobileNav = useSelector((state:RootState)=>state.data.isOpenMobileNav)
+  const dispatch= useDispatch()
     const [theme, setTheme] = useState<string>(()=>{
       return localStorage.getItem('theme') || 'light';
     }) 
@@ -16,8 +21,9 @@ const SunMoonTheme: React.FC = () => {
       document.getElementById('root').setAttribute('data-theme',`${theme}`)
     },[theme])
 
-    const handleClick = () => {
+    const handleClick = async () => {
         setTheme(theme ==='light' ? 'dark':'light')
+        await isOpenMobileNav && dispatch(setOpenNav(!isOpenMobileNav))
     }
     
   return (

@@ -1,11 +1,10 @@
 import React,{FC} from 'react'
-import { IPerson } from 'src/types/types'
+import { useSelector } from 'react-redux'
+import { RootState } from 'src/redux/store'
 
-interface PersonProps {
-    person : IPerson
-}
 
-const Person: React.FC<PersonProps> = ({person}) => {
+const Person: React.FC = () => {
+  const person = useSelector((state:RootState)=>state.data.person)
     const {fullName, email, phone, merriage, birthDay, children,img} = person
     
   return (
